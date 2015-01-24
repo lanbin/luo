@@ -8,34 +8,48 @@ $(function() {
 			loop: false,
 			onSlideChangeStart: function(swiper, direction) {
 				console.log(swiper.activeIndex, direction)
-			}
-		}),
-		yewu = new Swiper('#yewu', {
-			loop: false,
-			keyboardControl: true,
-			onSlideChangeStart: function(swiper, direction) {
-				if(direction == 'next') {
-					switch(swiper.activeIndex) {
-						case 1: ottStep();break;
-						case 2: appStep();break;
-						case 3: pcStep();break;
+				if (direction == 'next') {
+					if (swiper.activeIndex == 1) {
+						var yewu = new Swiper('#yewu', {
+							loop: false,
+							keyboardControl: true,
+							onSlideChangeStart: function(swiper, direction) {
+								if (direction == 'next') {
+									switch (swiper.activeIndex) {
+										case 1:
+											ottStep();
+											break;
+										case 2:
+											appStep();
+											break;
+										case 3:
+											pcStep();
+											break;
+									}
+								}
+							}
+						})
+					} else if (swiper.activeIndex == 2) {
+						var shengchan = new Swiper('#shengchan', {
+							loop: false,
+							keyboardControl: true,
+							onSlideChangeStart: function(swiper, direction) {
+								// if(direction == 'next') {
+								// 	switch(swiper.activeIndex) {
+								// 		case 1: ottStep();break;
+								// 		case 2: appStep();break;
+								// 		case 3: pcStep();break;
+								// 	}
+								// }
+							}
+						})
 					}
 				}
 			}
-		}),
-		shengchan = new Swiper('#shengchan', {
-			loop: false,
-			keyboardControl: true,
-			onSlideChangeStart: function(swiper, direction) {
-				// if(direction == 'next') {
-				// 	switch(swiper.activeIndex) {
-				// 		case 1: ottStep();break;
-				// 		case 2: appStep();break;
-				// 		case 3: pcStep();break;
-				// 	}
-				// }
-			}
+
 		})
+
+
 
 	$(".list li").css({
 		y: 300
