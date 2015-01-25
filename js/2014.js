@@ -9,7 +9,6 @@ $(function() {
 			onSlideChangeStart: function(swiper, direction) {
 				if (direction == 'next') {
 					if (swiper.activeIndex == 2) {
-						alert(swiper.activeIndex)
 						var yewu = new Swiper('#yewu', {
 							loop: false,
 							keyboardControl: true,
@@ -30,7 +29,6 @@ $(function() {
 							}
 						})
 					} else if (swiper.activeIndex == 3) {
-						alert(swiper.activeIndex)
 						var shengchan = new Swiper('#shengchan', {
 							loop: false,
 							keyboardControl: true,
