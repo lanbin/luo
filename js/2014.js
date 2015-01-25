@@ -7,9 +7,9 @@ $(function() {
 			keyboardControl: true,
 			loop: false,
 			onSlideChangeStart: function(swiper, direction) {
-				console.log(swiper.activeIndex, direction)
 				if (direction == 'next') {
-					if (swiper.activeIndex == 1) {
+					if (swiper.activeIndex == 2) {
+						alert(swiper.activeIndex)
 						var yewu = new Swiper('#yewu', {
 							loop: false,
 							keyboardControl: true,
@@ -29,19 +29,51 @@ $(function() {
 								}
 							}
 						})
-					} else if (swiper.activeIndex == 2) {
+					} else if (swiper.activeIndex == 3) {
+						alert(swiper.activeIndex)
 						var shengchan = new Swiper('#shengchan', {
 							loop: false,
 							keyboardControl: true,
 							onSlideChangeStart: function(swiper, direction) {
-								// if(direction == 'next') {
-								// 	switch(swiper.activeIndex) {
-								// 		case 1: ottStep();break;
-								// 		case 2: appStep();break;
-								// 		case 3: pcStep();break;
-								// 	}
-								// }
+								if (direction == 'next') {
+									switch (swiper.activeIndex) {
+										case 1:
+											renwuStep();
+											break;
+										case 2:
+											hefanStep();
+											break;
+									}
+								}
 							}
+						})
+					} else if (swiper.activeIndex == 4) {
+						var gushi = new Swiper('#gushi', {
+							loop: false,
+							keyboardControl: true,
+							onSlideChangeStart: function(swiper, direction) {
+								if (direction == 'next') {
+									$('.story-img').eq(swiper.activeIndex - 1).transition({
+										scale: 1,
+										opacity: 1,
+										delay: 400
+									})
+								}
+							}
+						})
+						$(".story-img").each(function(index, item) {
+							$(item).css({
+								marginLeft: ($(item).width()) / -2,
+								marginTop: ($(item).height()) / -2,
+								scale: 0.3,
+								opacity: 0
+							})
+						})
+					} else if (swiper.activeIndex == 5) {
+						$('#heying').transition({
+							scale: 1,
+							opacity: 1,
+							delay: 400
 						})
 					}
 				}
@@ -119,6 +151,26 @@ $(function() {
 		})
 	}
 
+	function renwuStep(){
+		$("#renwulist li").each(function(index, item) {
+			$(item).transition({
+				opacity: 1,
+				y: 0,
+				delay: (index + 1) * 800
+			})
+		})
+	}
+
+	function hefanStep(){
+		$("#hefanlist li").each(function(index, item) {
+			$(item).transition({
+				opacity: 1,
+				y: 0,
+				delay: (index + 1) * 800
+			})
+		})
+	}
+
 
 	_w.on("load", function() {
 		$("#loading").transition({
@@ -127,6 +179,8 @@ $(function() {
 		}, 1000, function() {
 			$(this).remove()
 		})
+
+
 	})
 
 })
