@@ -23,15 +23,28 @@ $(function() {
 
 					gushi.enableKeyboardControl()
 
-
 				} else if (swiper.activeIndex == 5) {
-					$('#heying').transition({
-						scale: 1,
+					$('#logo').css({
+						y: 0,
+						scale: 1
+					}).transition({
 						opacity: 1,
 						delay: 400
-					})
+					}, 1000).transition({
+						y: -100
+					}, 2000)
+
+					$("#slogen").transition({
+						opacity: 1,
+						y: -100,
+						delay: 4000
+					}, 1500)
 				}
 			}
+		}),
+		timeline = new Swiper('#timeline', {
+			loop: false,
+			keyboardControl: true
 		}),
 		yewu = new Swiper('#yewu', {
 			loop: false,
@@ -164,12 +177,12 @@ $(function() {
 	}
 
 	function codeStep() {
-		var codeline = new countUp('codeLine', 0, 400000, 0, 3, countUpOptions)
+		var codeline = new countUp('codeLine', 0, 400000, 0, 2, countUpOptions)
 		codeline.start()
 	}
 
 	function fanStep() {
-		var fan = new countUp('fan', 0, 30000, 0, 3, countUpOptions)
+		var fan = new countUp('fan', 0, 30000, 0, 2, countUpOptions)
 		fan.start()
 	}
 
