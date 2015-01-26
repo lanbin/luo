@@ -2,6 +2,37 @@ $(function() {
 
 	var _w = $(window),
 		_d = $(document),
+		main = new Swiper('#main', {
+			mode: 'vertical',
+			keyboardControl: true,
+			loop: false,
+			onSlideChangeStart: function(swiper, direction) {
+				yewu.disableKeyboardControl()
+				shengchan.disableKeyboardControl()
+				gushi.disableKeyboardControl()
+
+				if (swiper.activeIndex == 2) {
+
+					yewu.enableKeyboardControl()
+
+				} else if (swiper.activeIndex == 3) {
+
+					shengchan.enableKeyboardControl()
+
+				} else if (swiper.activeIndex == 4) {
+
+					gushi.enableKeyboardControl()
+
+
+				} else if (swiper.activeIndex == 5) {
+					$('#heying').transition({
+						scale: 1,
+						opacity: 1,
+						delay: 400
+					})
+				}
+			}
+		}),
 		yewu = new Swiper('#yewu', {
 			loop: false,
 			keyboardControl: true,
@@ -49,48 +80,6 @@ $(function() {
 					})
 				}
 			}
-		}),
-		main = new Swiper('#main', {
-			mode: 'vertical',
-			keyboardControl: true,
-			loop: false,
-			onSlideChangeStart: function(swiper, direction) {
-				yewu.disableKeyboardControl()
-				shengchan.disableKeyboardControl()
-				gushi.disableKeyboardControl()
-
-
-				if (direction == 'next') {
-
-					if (swiper.activeIndex == 2) {
-
-						yewu.enableKeyboardControl()
-
-					} else if (swiper.activeIndex == 3) {
-
-						shengchan.enableKeyboardControl()
-
-					} else if (swiper.activeIndex == 4) {
-						
-						gushi.enableKeyboardControl()
-
-						$(".story-img").each(function(index, item) {
-							$(item).css({
-								marginLeft: ($(item).width()) / -2,
-								marginTop: ($(item).height()) / -2,
-								scale: 0.3,
-								opacity: 0
-							})
-						})
-					} else if (swiper.activeIndex == 5) {
-						$('#heying').transition({
-							scale: 1,
-							opacity: 1,
-							delay: 400
-						})
-					}
-				}
-			}
 		})
 
 
@@ -98,6 +87,8 @@ $(function() {
 	$(".list li").css({
 		y: 300
 	})
+
+
 
 	function ottStep() {
 
@@ -191,7 +182,14 @@ $(function() {
 			$(this).remove()
 		})
 
-
+		$(".story-img").each(function(index, item) {
+			$(item).css({
+				marginLeft: ($(item).width()) / -2,
+				marginTop: ($(item).height()) / -2,
+				scale: 0.3,
+				opacity: 0
+			})
+		})
 	})
 
 })

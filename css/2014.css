@@ -55,7 +55,10 @@ html, body {
 }
 
 .normalTitle em{
-	padding: 0 20px;
+	padding: 0 80px;
+	font-size: 1.4em;
+	font-style: normal;
+	color: #f06000;
 }
 
 .xn .normalTitle{
