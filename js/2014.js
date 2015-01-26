@@ -35,11 +35,11 @@ $(function() {
 							onSlideChangeStart: function(swiper, direction) {
 								if (direction == 'next') {
 									switch (swiper.activeIndex) {
-										case 1:
-											renwuStep();
+										case 7:
+											codeStep();
 											break;
-										case 2:
-											hefanStep();
+										case 8:
+											fanStep();
 											break;
 									}
 								}
@@ -149,24 +149,23 @@ $(function() {
 		})
 	}
 
-	function renwuStep(){
-		$("#renwulist li").each(function(index, item) {
-			$(item).transition({
-				opacity: 1,
-				y: 0,
-				delay: (index + 1) * 800
-			})
-		})
+	var countUpOptions = {  
+		useEasing: true,
+		useGrouping: true,
+		separator: ',',
+		decimal: '.',
+		prefix: '',
+		suffix: ''
 	}
 
-	function hefanStep(){
-		$("#hefanlist li").each(function(index, item) {
-			$(item).transition({
-				opacity: 1,
-				y: 0,
-				delay: (index + 1) * 800
-			})
-		})
+	function codeStep() {
+		var codeline = new countUp('codeLine', 0, 400000, 0, 3, countUpOptions)
+		codeline.start()
+	}
+
+	function fanStep() {
+		var fan = new countUp('fan', 0, 30000, 0, 3, countUpOptions)
+		fan.start()
 	}
 
 
