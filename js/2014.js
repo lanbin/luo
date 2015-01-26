@@ -24,6 +24,14 @@ $(function() {
 					gushi.enableKeyboardControl()
 
 				} else if (swiper.activeIndex == 5) {
+
+					$("#heying").transition({
+						opacity: 1,
+						scale: 1,
+						delay: 400
+					})
+
+				} else if (swiper.activeIndex == 6) {
 					$('#logo').css({
 						y: 0,
 						scale: 1
@@ -196,6 +204,7 @@ $(function() {
 		})
 
 		$(".story-img").each(function(index, item) {
+			console.log($(item).width())
 			$(item).css({
 				marginLeft: ($(item).width()) / -2,
 				marginTop: ($(item).height()) / -2,
