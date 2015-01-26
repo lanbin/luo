@@ -38,9 +38,9 @@ html, body {
 	top: 50%;
 	left: 0;
 	right: 0;
-	margin-top: -80px;
+	margin-top: -180px;
 	text-align: center;
-	font-size: 10em;
+	font-size: 20em;
 }
 
 .normalTitle{
@@ -59,6 +59,13 @@ html, body {
 	font-size: 1.4em;
 	font-style: normal;
 	color: #f06000;
+}
+
+.numTitle{
+	font-size: 3em;
+	position: absolute;
+	left: 30%;
+	top: 25%;
 }
 
 .xn .normalTitle{
@@ -194,6 +201,27 @@ html, body {
 	margin: 0 100px 50px;
 	font-size: 3em;
 	line-height: 1.5em
+}
+
+#shengchan .normalTitle{
+	font-size: 5em;
+	margin-top: -270px;
+}
+
+#shengchan .normalTitle em{
+	padding: 0 0 0 80px;
+	font-size: 2.8em;
+	font-style: normal;
+	color: #f06000;
+	line-height: 1.1em;
+}
+
+#shengchan .normalTitle em.unit{
+	padding: 0;
+	font-size: 2.8em;
+	font-style: normal;
+	color: white;
+	line-height: 1.1em;
 }
 
 .storyjs-embed, .vco-storyjs{
