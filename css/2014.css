@@ -59,13 +59,14 @@ html, body {
 }
 
 .xn .normalTitle{
-	font-size: 10em;
+	font-size: 20em;
+	margin-top: -240px;
 }
 
 .list{
 	width: 60%;
 	margin-left: 17%;
-	margin-top: 5em;
+	margin-top: 7em;
 	font-size: 4em;
 }
 
@@ -93,13 +94,7 @@ html, body {
 	height: 80%;
 	margin-left: -40%;
 	margin-top: -15%;
-	border: 1px solid #ccc;
 	border-radius: 5px;
-	border-right: #fff 1px solid;
-	border-left: #aaa 1px solid;
-	border-top: #aaa 1px solid;
-	border-bottom: #fff 1px solid;
-	border-width: 2px;
 	box-shadow: 1px 1px 60px black;
 }
 

@@ -2,63 +2,78 @@ $(function() {
 
 	var _w = $(window),
 		_d = $(document),
+		yewu = new Swiper('#yewu', {
+			loop: false,
+			keyboardControl: true,
+			onSlideChangeStart: function(swiper, direction) {
+				if (direction == 'next') {
+					switch (swiper.activeIndex) {
+						case 1:
+							ottStep();
+							break;
+						case 2:
+							appStep();
+							break;
+						case 3:
+							pcStep();
+							break;
+					}
+				}
+			}
+		}),
+		shengchan = new Swiper('#shengchan', {
+			loop: false,
+			keyboardControl: true,
+			onSlideChangeStart: function(swiper, direction) {
+				if (direction == 'next') {
+					switch (swiper.activeIndex) {
+						case 7:
+							codeStep();
+							break;
+						case 8:
+							fanStep();
+							break;
+					}
+				}
+			}
+		}),
+		gushi = new Swiper('#gushi', {
+			loop: false,
+			keyboardControl: true,
+			onSlideChangeStart: function(swiper, direction) {
+				if (direction == 'next') {
+					$('.story-img').eq(swiper.activeIndex - 1).transition({
+						scale: 1,
+						opacity: 1,
+						delay: 400
+					})
+				}
+			}
+		}),
 		main = new Swiper('#main', {
 			mode: 'vertical',
 			keyboardControl: true,
 			loop: false,
 			onSlideChangeStart: function(swiper, direction) {
+				yewu.disableKeyboardControl()
+				shengchan.disableKeyboardControl()
+				gushi.disableKeyboardControl()
+
+
 				if (direction == 'next') {
+
 					if (swiper.activeIndex == 2) {
-						var yewu = new Swiper('#yewu', {
-							loop: false,
-							keyboardControl: true,
-							onSlideChangeStart: function(swiper, direction) {
-								if (direction == 'next') {
-									switch (swiper.activeIndex) {
-										case 1:
-											ottStep();
-											break;
-										case 2:
-											appStep();
-											break;
-										case 3:
-											pcStep();
-											break;
-									}
-								}
-							}
-						})
+
+						yewu.enableKeyboardControl()
+
 					} else if (swiper.activeIndex == 3) {
-						var shengchan = new Swiper('#shengchan', {
-							loop: false,
-							keyboardControl: true,
-							onSlideChangeStart: function(swiper, direction) {
-								if (direction == 'next') {
-									switch (swiper.activeIndex) {
-										case 7:
-											codeStep();
-											break;
-										case 8:
-											fanStep();
-											break;
-									}
-								}
-							}
-						})
+
+						shengchan.enableKeyboardControl()
+
 					} else if (swiper.activeIndex == 4) {
-						var gushi = new Swiper('#gushi', {
-							loop: false,
-							keyboardControl: true,
-							onSlideChangeStart: function(swiper, direction) {
-								if (direction == 'next') {
-									$('.story-img').eq(swiper.activeIndex - 1).transition({
-										scale: 1,
-										opacity: 1,
-										delay: 400
-									})
-								}
-							}
-						})
+						
+						gushi.enableKeyboardControl()
+
 						$(".story-img").each(function(index, item) {
 							$(item).css({
 								marginLeft: ($(item).width()) / -2,
@@ -76,7 +91,6 @@ $(function() {
 					}
 				}
 			}
-
 		})
 
 
