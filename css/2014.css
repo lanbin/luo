@@ -64,13 +64,46 @@ html, body {
 .numTitle{
 	font-size: 3em;
 	position: absolute;
-	left: 30%;
+	left: 27%;
 	top: 25%;
 }
 
 .xn .normalTitle{
 	font-size: 20em;
 	margin-top: -240px;
+}
+
+.block{
+	width: 10%;
+	height: 60%;
+	background-color: #ff00ff;
+	position: absolute;
+	top: 20%;
+	left: 0;
+	border-radius: 5px;
+	box-shadow: 0 0 50px black;
+}
+
+.blocks:after{
+	content: '+';
+	position: absolute;
+	right: -41%;
+	font-size: 8em;
+	top: 37%;
+}
+
+.block .num{
+	font-size: 15em;
+	width: 100%;
+	text-align: center;
+	margin-top: 45%;
+}
+
+.block .desc{
+	font-size: 3em;
+	width: 100%;
+	text-align: center;
+	margin-top: 30%;
 }
 
 .list{

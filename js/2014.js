@@ -114,9 +114,9 @@ $(function() {
 	function ottStep() {
 
 		$("#otttile").transition({
-			scale: 0.7,
-			x: "-40%",
-			y: "-230%",
+			scale: 0.5,
+			x: "-60%",
+			y: "-150%",
 			delay: 1000
 		}, 1500, function() {
 			_w.trigger("titledone")
@@ -135,9 +135,9 @@ $(function() {
 
 	function appStep() {
 		$("#apptile").transition({
-			scale: 0.7,
-			x: "-40%",
-			y: "-230%",
+			scale: 0.5,
+			x: "-60%",
+			y: "-150%",
 			delay: 1000
 		}, 1500, function() {
 			_w.trigger("apptitledone")
@@ -156,9 +156,9 @@ $(function() {
 
 	function pcStep() {
 		$("#pctile").transition({
-			scale: 0.7,
-			x: "-40%",
-			y: "-230%",
+			scale: 0.5,
+			x: "-60%",
+			y: "-150%",
 			delay: 1000
 		}, 1500, function() {
 			_w.trigger("pctitledone")
@@ -204,7 +204,6 @@ $(function() {
 		})
 
 		$(".story-img").each(function(index, item) {
-			console.log($(item).width())
 			$(item).css({
 				marginLeft: ($(item).width()) / -2,
 				marginTop: ($(item).height()) / -2,
